@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class OrderBid - My Fancy Title</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Order.html">Order</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-avg_price">#avg_price</a>
+    
+    <li ><a href="#method-i-compute_locked">#compute_locked</a>
+    
+    <li ><a href="#method-i-expect_account">#expect_account</a>
+    
+    <li ><a href="#method-i-get_account_changes">#get_account_changes</a>
+    
+    <li ><a href="#method-i-hold_account">#hold_account</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-OrderBid">
+  <h1 id="class-OrderBid" class="class">
+    class OrderBid
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="LOCKING_BUFFER_FACTOR">LOCKING_BUFFER_FACTOR
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-avg_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">avg_price</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="avg_price-source">
+            <pre><span class="ruby-comment"># File app/models/order_bid.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">avg_price</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-operator">::</span><span class="ruby-constant">Trade</span><span class="ruby-operator">::</span><span class="ruby-constant">ZERO</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">funds_received</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fix_number_precision</span>(<span class="ruby-value">:bid</span>, <span class="ruby-identifier">funds_used</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">funds_received</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-compute_locked" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compute_locked</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="compute_locked-source">
+            <pre><span class="ruby-comment"># File app/models/order_bid.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compute_locked</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">ord_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;limit&#39;</span>
+    <span class="ruby-identifier">price</span><span class="ruby-operator">*</span><span class="ruby-identifier">volume</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;market&#39;</span>
+    <span class="ruby-identifier">funds</span> = <span class="ruby-identifier">estimate_required_funds</span>(<span class="ruby-constant">Global</span>[<span class="ruby-identifier">currency</span>].<span class="ruby-identifier">asks</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span><span class="ruby-operator">*</span><span class="ruby-identifier">v</span> }
+    <span class="ruby-identifier">funds</span><span class="ruby-operator">*</span><span class="ruby-constant">LOCKING_BUFFER_FACTOR</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-expect_account" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expect_account</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="expect_account-source">
+            <pre><span class="ruby-comment"># File app/models/order_bid.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expect_account</span>
+  <span class="ruby-identifier">member</span>.<span class="ruby-identifier">get_account</span>(<span class="ruby-identifier">ask</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_account_changes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_account_changes</span><span
+            class="method-args">(trade)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_account_changes-source">
+            <pre><span class="ruby-comment"># File app/models/order_bid.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_account_changes</span>(<span class="ruby-identifier">trade</span>)
+  [<span class="ruby-identifier">trade</span>.<span class="ruby-identifier">funds</span>, <span class="ruby-identifier">trade</span>.<span class="ruby-identifier">volume</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hold_account" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hold_account</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hold_account-source">
+            <pre><span class="ruby-comment"># File app/models/order_bid.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hold_account</span>
+  <span class="ruby-identifier">member</span>.<span class="ruby-identifier">get_account</span>(<span class="ruby-identifier">bid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

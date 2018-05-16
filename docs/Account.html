@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Account - My Fancy Title</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Currencible</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-after">::after</a>
+    
+    <li ><a href="#method-c-compute_locked_and_balance">::compute_locked_and_balance</a>
+    
+    <li ><a href="#method-i-amount">#amount</a>
+    
+    <li class="calls-super" ><a href="#method-i-as_json">#as_json</a>
+    
+    <li ><a href="#method-i-change_balance_and_locked">#change_balance_and_locked</a>
+    
+    <li ><a href="#method-i-examine">#examine</a>
+    
+    <li ><a href="#method-i-last_version">#last_version</a>
+    
+    <li ><a href="#method-i-lock_funds">#lock_funds</a>
+    
+    <li ><a href="#method-i-payment_address">#payment_address</a>
+    
+    <li ><a href="#method-i-plus_funds">#plus_funds</a>
+    
+    <li ><a href="#method-i-sub_funds">#sub_funds</a>
+    
+    <li ><a href="#method-i-trigger">#trigger</a>
+    
+    <li ><a href="#method-i-unlock_and_sub_funds">#unlock_and_sub_funds</a>
+    
+    <li ><a href="#method-i-unlock_funds">#unlock_funds</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Account">
+  <h1 id="class-Account" class="class">
+    class Account
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="DEPOSIT">DEPOSIT
+        
+        <dd>
+        
+      
+        <dt id="FIX">FIX
+        
+        <dd>
+        
+      
+        <dt id="FUNS">FUNS
+        
+        <dd>
+        
+      
+        <dt id="ORDER_CANCEL">ORDER_CANCEL
+        
+        <dd>
+        
+      
+        <dt id="ORDER_FULLFILLED">ORDER_FULLFILLED
+        
+        <dd>
+        
+      
+        <dt id="ORDER_SUBMIT">ORDER_SUBMIT
+        
+        <dd>
+        
+      
+        <dt id="STRIKE_ADD">STRIKE_ADD
+        
+        <dd>
+        
+      
+        <dt id="STRIKE_FEE">STRIKE_FEE
+        
+        <dd>
+        
+      
+        <dt id="STRIKE_SUB">STRIKE_SUB
+        
+        <dd>
+        
+      
+        <dt id="STRIKE_UNLOCK">STRIKE_UNLOCK
+        
+        <dd>
+        
+      
+        <dt id="UNKNOWN">UNKNOWN
+        
+        <dd>
+        
+      
+        <dt id="WITHDRAW">WITHDRAW
+        
+        <dd>
+        
+      
+        <dt id="WITHDRAW_LOCK">WITHDRAW_LOCK
+        
+        <dd>
+        
+      
+        <dt id="WITHDRAW_UNLOCK">WITHDRAW_UNLOCK
+        
+        <dd>
+        
+      
+        <dt id="ZERO">ZERO
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-after" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after</span><span
+            class="method-args">(*names) { |self, to_sym, *args| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="after-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">after</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">m</span> = <span class="ruby-identifier">instance_method</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>).(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword">yield</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-compute_locked_and_balance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compute_locked_and_balance</span><span
+            class="method-args">(fun, amount, opts)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="compute_locked_and_balance-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compute_locked_and_balance</span>(<span class="ruby-identifier">fun</span>, <span class="ruby-identifier">amount</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-string">&quot;invalid account operation&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">FUNS</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">fun</span>)
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">fun</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:sub_funds</span> <span class="ruby-keyword">then</span> [<span class="ruby-constant">ZERO</span>, <span class="ruby-constant">ZERO</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">amount</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:plus_funds</span> <span class="ruby-keyword">then</span> [<span class="ruby-constant">ZERO</span>, <span class="ruby-identifier">amount</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:lock_funds</span> <span class="ruby-keyword">then</span> [<span class="ruby-identifier">amount</span>, <span class="ruby-constant">ZERO</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">amount</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:unlock_funds</span> <span class="ruby-keyword">then</span> [<span class="ruby-constant">ZERO</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">amount</span>, <span class="ruby-identifier">amount</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:unlock_and_sub_funds</span>
+    <span class="ruby-identifier">locked</span> = <span class="ruby-constant">ZERO</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:locked</span>]
+    <span class="ruby-identifier">balance</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:locked</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">amount</span>
+    [<span class="ruby-identifier">locked</span>, <span class="ruby-identifier">balance</span>]
+  <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-string">&quot;forbidden account operation&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-amount" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">amount</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="amount-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">amount</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">balance</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-as_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">as_json</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="as_json-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">as_json</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge</span>({
+    <span class="ruby-comment"># check if there is a useable address, but don&#39;t touch it to create the address now.</span>
+    <span class="ruby-string">&quot;deposit_address&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">payment_addresses</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">payment_address</span>.<span class="ruby-identifier">deposit_address</span>,
+    <span class="ruby-string">&quot;name_text&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">currency_obj</span>.<span class="ruby-identifier">name_text</span>,
+    <span class="ruby-string">&quot;default_withdraw_fund_source_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">default_withdraw_fund_source_id</span>
+  })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-change_balance_and_locked" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_balance_and_locked</span><span
+            class="method-args">(delta_b, delta_l)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change_balance_and_locked-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_balance_and_locked</span>(<span class="ruby-identifier">delta_b</span>, <span class="ruby-identifier">delta_l</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">balance</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">delta_b</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">delta_l</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}&quot;</span>
+  <span class="ruby-identifier">add_to_transaction</span> <span class="ruby-comment"># so after_commit will be triggered</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-examine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">examine</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="examine-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">examine</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">versions</span>.<span class="ruby-identifier">find_each</span>(<span class="ruby-identifier">batch_size</span><span class="ruby-operator">:</span> <span class="ruby-value">100000</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">expected</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">amount_change</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">expected</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">amount</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">expected</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">amount</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last_version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_version</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="last_version-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last_version</span>
+  <span class="ruby-identifier">versions</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-lock_funds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lock_funds</span><span
+            class="method-args">(amount, reason: nil, ref: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lock_funds-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lock_funds</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ref</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  (<span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">ZERO</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">balance</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-node">&quot;cannot lock funds (amount: #{amount})&quot;</span>
+  <span class="ruby-identifier">change_balance_and_locked</span> <span class="ruby-operator">-</span><span class="ruby-identifier">amount</span>, <span class="ruby-identifier">amount</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-payment_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">payment_address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="payment_address-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">payment_address</span>
+  <span class="ruby-identifier">payment_addresses</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">payment_addresses</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">currency</span><span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">currency</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-plus_funds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">plus_funds</span><span
+            class="method-args">(amount, fee: ZERO, reason: nil, ref: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="plus_funds-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">plus_funds</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">fee</span><span class="ruby-operator">:</span> <span class="ruby-constant">ZERO</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ref</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  (<span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">ZERO</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">fee</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">amount</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-node">&quot;cannot add funds (amount: #{amount})&quot;</span>
+  <span class="ruby-identifier">change_balance_and_locked</span> <span class="ruby-identifier">amount</span>, <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sub_funds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sub_funds</span><span
+            class="method-args">(amount, fee: ZERO, reason: nil, ref: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sub_funds-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sub_funds</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">fee</span><span class="ruby-operator">:</span> <span class="ruby-constant">ZERO</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ref</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  (<span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">ZERO</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">balance</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-node">&quot;cannot subtract funds (amount: #{amount})&quot;</span>
+  <span class="ruby-identifier">change_balance_and_locked</span> <span class="ruby-operator">-</span><span class="ruby-identifier">amount</span>, <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trigger" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trigger</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trigger-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">member</span>
+
+  <span class="ruby-identifier">json</span> = <span class="ruby-constant">Jbuilder</span>.<span class="ruby-identifier">encode</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">json</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">json</span>.(<span class="ruby-keyword">self</span>, <span class="ruby-value">:balance</span>, <span class="ruby-value">:locked</span>, <span class="ruby-value">:currency</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">member</span>.<span class="ruby-identifier">trigger</span>(<span class="ruby-string">&#39;account&#39;</span>, <span class="ruby-identifier">json</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unlock_and_sub_funds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock_and_sub_funds</span><span
+            class="method-args">(amount, locked: ZERO, fee: ZERO, reason: nil, ref: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unlock_and_sub_funds-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unlock_and_sub_funds</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">locked</span><span class="ruby-operator">:</span> <span class="ruby-constant">ZERO</span>, <span class="ruby-identifier">fee</span><span class="ruby-operator">:</span> <span class="ruby-constant">ZERO</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ref</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-node">&quot;cannot unlock and subtract funds (amount: #{amount})&quot;</span> <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>) <span class="ruby-keyword">or</span> (<span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">locked</span>))
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LockedError</span>, <span class="ruby-string">&quot;invalid lock amount&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">locked</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LockedError</span>, <span class="ruby-node">&quot;invalid lock amount (amount: #{amount}, locked: #{locked}, self.locked: #{self.locked})&quot;</span> <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">locked</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>) <span class="ruby-keyword">or</span> (<span class="ruby-identifier">locked</span> <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked</span>))
+  <span class="ruby-identifier">change_balance_and_locked</span> <span class="ruby-identifier">locked</span><span class="ruby-operator">-</span><span class="ruby-identifier">amount</span>, <span class="ruby-operator">-</span><span class="ruby-identifier">locked</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unlock_funds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock_funds</span><span
+            class="method-args">(amount, reason: nil, ref: nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unlock_funds-source">
+            <pre><span class="ruby-comment"># File app/models/account.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unlock_funds</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">reason</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ref</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+  (<span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">ZERO</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">amount</span> <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locked</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">AccountError</span>, <span class="ruby-node">&quot;cannot unlock funds (amount: #{amount})&quot;</span>
+  <span class="ruby-identifier">change_balance_and_locked</span> <span class="ruby-identifier">amount</span>, <span class="ruby-operator">-</span><span class="ruby-identifier">amount</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

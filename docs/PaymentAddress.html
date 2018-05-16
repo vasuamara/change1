@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class PaymentAddress - My Fancy Title</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Currencible</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-construct_memo">::construct_memo</a>
+    
+    <li ><a href="#method-c-destruct_memo">::destruct_memo</a>
+    
+    <li ><a href="#method-i-as_json">#as_json</a>
+    
+    <li ><a href="#method-i-deposit_address">#deposit_address</a>
+    
+    <li ><a href="#method-i-gen_address">#gen_address</a>
+    
+    <li ><a href="#method-i-memo">#memo</a>
+    
+    <li ><a href="#method-i-to_json">#to_json</a>
+    
+    <li ><a href="#method-i-trigger_deposit_address">#trigger_deposit_address</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-PaymentAddress">
+  <h1 id="class-PaymentAddress" class="class">
+    class PaymentAddress
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-construct_memo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">construct_memo</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="construct_memo-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">construct_memo</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">member</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Account</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">member</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-identifier">checksum</span> = <span class="ruby-identifier">member</span>.<span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">-3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+  <span class="ruby-node">&quot;#{member.id}#{checksum}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-destruct_memo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destruct_memo</span><span
+            class="method-args">(memo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destruct_memo-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">destruct_memo</span>(<span class="ruby-identifier">memo</span>)
+  <span class="ruby-identifier">member_id</span> = <span class="ruby-identifier">memo</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-3</span>]
+  <span class="ruby-identifier">checksum</span>  = <span class="ruby-identifier">memo</span>[<span class="ruby-value">-3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+
+  <span class="ruby-identifier">member</span> = <span class="ruby-constant">Member</span>.<span class="ruby-identifier">find_by_id</span> <span class="ruby-identifier">member_id</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">member</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">member</span>.<span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">-3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">checksum</span>
+  <span class="ruby-identifier">member</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-as_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">as_json</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="as_json-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">as_json</span>(<span class="ruby-identifier">options</span> = {})
+  {
+    <span class="ruby-identifier">account_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">account_id</span>,
+    <span class="ruby-identifier">deposit_address</span><span class="ruby-operator">:</span> <span class="ruby-identifier">deposit_address</span>
+  }.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-deposit_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deposit_address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="deposit_address-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deposit_address</span>
+  <span class="ruby-identifier">currency_obj</span>[<span class="ruby-value">:deposit_account</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">address</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gen_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gen_address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gen_address-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gen_address</span>
+  <span class="ruby-identifier">payload</span> = { <span class="ruby-identifier">payment_address_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">currency</span><span class="ruby-operator">:</span> <span class="ruby-identifier">currency</span> }
+  <span class="ruby-identifier">attrs</span>   = { <span class="ruby-identifier">persistent</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-constant">AMQPQueue</span>.<span class="ruby-identifier">enqueue</span>(<span class="ruby-value">:deposit_coin_address</span>, <span class="ruby-identifier">payload</span>, <span class="ruby-identifier">attrs</span>)
+  <span class="ruby-comment">#byebug</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-memo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">memo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="memo-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">memo</span>
+  <span class="ruby-identifier">address</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">address</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;|&#39;</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_json-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_json</span>
+  {<span class="ruby-identifier">address</span><span class="ruby-operator">:</span> <span class="ruby-identifier">deposit_address</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trigger_deposit_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trigger_deposit_address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trigger_deposit_address-source">
+            <pre><span class="ruby-comment"># File app/models/payment_address.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger_deposit_address</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">Pusher</span>[<span class="ruby-node">&quot;private-#{account.member.sn}&quot;</span>].<span class="ruby-identifier">trigger_async</span>(<span class="ruby-string">&#39;deposit_address&#39;</span>, {<span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;create&#39;</span>, <span class="ruby-identifier">attributes</span><span class="ruby-operator">:</span> <span class="ruby-identifier">as_json</span>})
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

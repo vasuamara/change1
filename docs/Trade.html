@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Trade - My Fancy Title</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">ActiveHash::Associations::ActiveRecordExtensions</span>
+  
+  
+  
+    <li><span class="extend">Enumerize</span>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-filter">::filter</a>
+    
+    <li ><a href="#method-c-for_member">::for_member</a>
+    
+    <li ><a href="#method-c-latest_price">::latest_price</a>
+    
+    <li ><a href="#method-i-for_global">#for_global</a>
+    
+    <li ><a href="#method-i-for_notify">#for_notify</a>
+    
+    <li ><a href="#method-i-trigger_notify">#trigger_notify</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Trade">
+  <h1 id="class-Trade" class="class">
+    class Trade
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="ZERO">ZERO
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-side" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">side</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-filter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filter</span><span
+            class="method-args">(market, timestamp, from, to, limit, order)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="filter-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filter</span>(<span class="ruby-identifier">market</span>, <span class="ruby-identifier">timestamp</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">limit</span>, <span class="ruby-identifier">order</span>)
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">with_currency</span>(<span class="ruby-identifier">market</span>).<span class="ruby-identifier">order</span>(<span class="ruby-identifier">order</span>)
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">trades</span>.<span class="ruby-identifier">limit</span>(<span class="ruby-identifier">limit</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit</span>.<span class="ruby-identifier">present?</span>
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">trades</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&#39;created_at &lt;= ?&#39;</span>, <span class="ruby-identifier">timestamp</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">present?</span>
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">trades</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&#39;id &gt; ?&#39;</span>, <span class="ruby-identifier">from</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">from</span>.<span class="ruby-identifier">present?</span>
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">trades</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&#39;id &lt; ?&#39;</span>, <span class="ruby-identifier">to</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">present?</span>
+  <span class="ruby-identifier">trades</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-for_member" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_member</span><span
+            class="method-args">(currency, member, options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for_member-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">for_member</span>(<span class="ruby-identifier">currency</span>, <span class="ruby-identifier">member</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">trades</span> = <span class="ruby-identifier">filter</span>(<span class="ruby-identifier">currency</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:time_to</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:from</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:to</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:order</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;ask_member_id = ? or bid_member_id = ?&quot;</span>, <span class="ruby-identifier">member</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">member</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">trades</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">trade</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">trade</span>.<span class="ruby-identifier">side</span> = <span class="ruby-identifier">trade</span>.<span class="ruby-identifier">ask_member_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">member</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;ask&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&#39;bid&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-latest_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">latest_price</span><span
+            class="method-args">(currency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="latest_price-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">latest_price</span>(<span class="ruby-identifier">currency</span>)
+  <span class="ruby-identifier">with_currency</span>(<span class="ruby-identifier">currency</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value">:id</span>).<span class="ruby-identifier">reverse_order</span>
+    .<span class="ruby-identifier">limit</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:price</span>) <span class="ruby-operator">||</span> <span class="ruby-string">&quot;0.0&quot;</span>.<span class="ruby-identifier">to_d</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-for_global" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_global</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for_global-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">for_global</span>
+  {
+    <span class="ruby-identifier">tid</span><span class="ruby-operator">:</span>    <span class="ruby-identifier">id</span>,
+    <span class="ruby-identifier">type</span><span class="ruby-operator">:</span>   <span class="ruby-identifier">trend</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;down&#39;</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;sell&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&#39;buy&#39;</span>,
+    <span class="ruby-identifier">date</span><span class="ruby-operator">:</span>   <span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">to_i</span>,
+    <span class="ruby-identifier">price</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">price</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ZERO</span>,
+    <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">volume</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ZERO</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-for_notify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_notify</span><span
+            class="method-args">(kind=nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for_notify-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">for_notify</span>(<span class="ruby-identifier">kind</span>=<span class="ruby-keyword">nil</span>)
+  {
+    <span class="ruby-identifier">id</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">id</span>,
+    <span class="ruby-identifier">kind</span><span class="ruby-operator">:</span>   <span class="ruby-identifier">kind</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">side</span>,
+    <span class="ruby-identifier">at</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">to_i</span>,
+    <span class="ruby-identifier">price</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">price</span>.<span class="ruby-identifier">to_s</span>  <span class="ruby-operator">||</span> <span class="ruby-constant">ZERO</span>,
+    <span class="ruby-identifier">volume</span><span class="ruby-operator">:</span> <span class="ruby-identifier">volume</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ZERO</span>,
+    <span class="ruby-identifier">market</span><span class="ruby-operator">:</span> <span class="ruby-identifier">currency</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trigger_notify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trigger_notify</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trigger_notify-source">
+            <pre><span class="ruby-comment"># File app/models/trade.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger_notify</span>
+  <span class="ruby-identifier">ask</span>.<span class="ruby-identifier">member</span>.<span class="ruby-identifier">notify</span> <span class="ruby-string">&#39;trade&#39;</span>, <span class="ruby-identifier">for_notify</span>(<span class="ruby-string">&#39;ask&#39;</span>)
+  <span class="ruby-identifier">bid</span>.<span class="ruby-identifier">member</span>.<span class="ruby-identifier">notify</span> <span class="ruby-string">&#39;trade&#39;</span>, <span class="ruby-identifier">for_notify</span>(<span class="ruby-string">&#39;bid&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

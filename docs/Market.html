@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Market - My Fancy Title</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ActiveYamlBase.html">ActiveYamlBase</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-all">::all</a>
+    
+    <li ><a href="#method-c-enumerize">::enumerize</a>
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-to_hash">::to_hash</a>
+    
+    <li ><a href="#method-i-ask_currency">#ask_currency</a>
+    
+    <li ><a href="#method-i-asks">#asks</a>
+    
+    <li ><a href="#method-i-bid_currency">#bid_currency</a>
+    
+    <li ><a href="#method-i-bids">#bids</a>
+    
+    <li ><a href="#method-i-fix_number_precision">#fix_number_precision</a>
+    
+    <li ><a href="#method-i-latest_price">#latest_price</a>
+    
+    <li ><a href="#method-i-scope-3F">#scope?</a>
+    
+    <li ><a href="#method-i-ticker">#ticker</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-trades">#trades</a>
+    
+    <li ><a href="#method-i-unit_info">#unit_info</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Market">
+  <h1 id="class-Market" class="class">
+    class Market
+  </h1>
+
+  <section class="description">
+    
+<p>People exchange commodities in markets. Each market focuses on certain
+commodity pair `{A, B}`. By convention, we call people exchange A for B
+<strong>sellers</strong> who submit <strong>ask</strong> orders, and people
+exchange B for A <strong>buyers</strong> who submit <strong>bid</strong>
+orders.</p>
+
+<p>ID of market is always in the form “#{B}#{A}”. For example, in
+&#39;btccny&#39; market, the commodity pair is `{btc, cny}`. Sellers sell
+out <em>btc</em> for <em>cny</em>, buyers buy in <em>btc</em> with
+<em>cny</em>. <em>btc</em> is the `base_unit`, while <em>cny</em> is the
+`quote_unit`.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">all_with_invisible</span>.<span class="ruby-identifier">select</span> <span class="ruby-operator">&amp;</span><span class="ruby-value">:visible</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-enumerize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enumerize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="enumerize-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">enumerize</span>
+  <span class="ruby-identifier">all_with_invisible</span>.<span class="ruby-identifier">inject</span>({}) {<span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">i</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">i</span>.<span class="ruby-identifier">code</span>; <span class="ruby-identifier">hash</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;missing base_unit or quote_unit: #{args}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base_unit</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">quote_unit</span>.<span class="ruby-identifier">present?</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{base_unit}/#{quote_unit}&quot;</span>.<span class="ruby-identifier">upcase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@markets_hash</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@markets_hash</span>
+
+  <span class="ruby-ivar">@markets_hash</span> = {}
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@markets_hash</span>[<span class="ruby-identifier">m</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">unit_info</span> }
+  <span class="ruby-ivar">@markets_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-ask_currency" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ask_currency</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ask_currency-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ask_currency</span>
+  <span class="ruby-constant">Currency</span>.<span class="ruby-identifier">find_by_code</span>(<span class="ruby-identifier">ask</span>[<span class="ruby-string">&quot;currency&quot;</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-asks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">asks</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="asks-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">asks</span>;   <span class="ruby-identifier">global</span>.<span class="ruby-identifier">asks</span>   <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bid_currency" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bid_currency</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bid_currency-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bid_currency</span>
+  <span class="ruby-constant">Currency</span>.<span class="ruby-identifier">find_by_code</span>(<span class="ruby-identifier">bid</span>[<span class="ruby-string">&quot;currency&quot;</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bids" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bids</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>shortcut of global access</p>
+          
+          
+
+          
+          <div class="method-source-code" id="bids-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bids</span>;   <span class="ruby-identifier">global</span>.<span class="ruby-identifier">bids</span>   <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fix_number_precision" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fix_number_precision</span><span
+            class="method-args">(type, d)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>type is :ask or :bid</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fix_number_precision-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fix_number_precision</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">d</span>)
+  <span class="ruby-identifier">digits</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">type</span>)[<span class="ruby-string">&#39;fixed&#39;</span>]
+  <span class="ruby-identifier">d</span>.<span class="ruby-identifier">round</span> <span class="ruby-identifier">digits</span>, <span class="ruby-value">2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-latest_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">latest_price</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="latest_price-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">latest_price</span>
+  <span class="ruby-constant">Trade</span>.<span class="ruby-identifier">latest_price</span>(<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_sym</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-scope-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scope?</span><span
+            class="method-args">(account_or_currency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="scope-3F-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scope?</span>(<span class="ruby-identifier">account_or_currency</span>)
+  <span class="ruby-identifier">code</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">account_or_currency</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Account</span>
+           <span class="ruby-identifier">account_or_currency</span>.<span class="ruby-identifier">currency</span>
+         <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">account_or_currency</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Currency</span>
+           <span class="ruby-identifier">account_or_currency</span>.<span class="ruby-identifier">code</span>
+         <span class="ruby-keyword">else</span>
+           <span class="ruby-identifier">account_or_currency</span>
+         <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">base_unit</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">quote_unit</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ticker" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ticker</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ticker-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ticker</span>; <span class="ruby-identifier">global</span>.<span class="ruby-identifier">ticker</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trades" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trades</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trades-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trades</span>; <span class="ruby-identifier">global</span>.<span class="ruby-identifier">trades</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unit_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unit_info</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unit_info-source">
+            <pre><span class="ruby-comment"># File app/models/market.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unit_info</span>
+  {<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">base_unit</span><span class="ruby-operator">:</span> <span class="ruby-identifier">base_unit</span>, <span class="ruby-identifier">quote_unit</span><span class="ruby-operator">:</span> <span class="ruby-identifier">quote_unit</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
